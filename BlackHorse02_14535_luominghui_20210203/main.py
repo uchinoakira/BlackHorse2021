@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 def get_html_content(url_base, page_id):
     url = url_base + str(page_id) + '.shtml'
-    print(url)
+    #print(url)
     headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36'}
     html = requests.get(url, headers=headers, timeout=10)
@@ -31,8 +31,8 @@ def analyze_content(url_base, page_range):
             temp['time'] = td_list[6].string
             temp['status'] = td_list[7].em.string
             df = df.append(temp, ignore_index=True)
-            print(temp)
-        print(df)
+            #print(temp)
+        #print(df)
     return df
 
 
